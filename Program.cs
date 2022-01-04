@@ -42,9 +42,9 @@ class SendMailJob : IJob
         this.sendGridClient = sendGridClient;
         this.logger = logger;
     }
+
     public async Task Execute(IJobExecutionContext context)
     {
-        logger.LogInformation("Greetings from HelloJob!");
         var msg = new SendGridMessage()
         {
             From = new EmailAddress("[REPLACE WITH YOUR EMAIL]", "[REPLACE WITH YOUR NAME]"),
